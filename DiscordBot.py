@@ -26,6 +26,7 @@ async def on_ready(): # this event function is called when the bot is run and re
 async def on_disconnect(): #event indicating bot has been disconnected from discord
     print("Bot has been disconnected.") #indicator of the bot disconnecting
 
+    
 @bot.event
 async def on_message(message): # this function takes the user input as argument and will process it to determine a relevant response that is returned to the user
     message.content = message.content.lower() #inclusion of all indices of a user input, whether upper case or lower case, so case sensitivity is not a constraint # reference: https://stackoverflow.com/questions/50359600/can-a-discord-py-bot-not-be-case-sensitive​
@@ -86,7 +87,6 @@ async def on_message(message): # this function takes the user input as argument 
         await message.channel.send(random.choice(misunderstoodResponses) + ", " + message.author.mention + ". " + random.choice(misunderstoodEmojis))  #gives feedback on misunderstood user inputs
 
     await bot.process_commands(message) #allows for commands to execute without the event (on_message()) function interfering or overlapping
-
 
 
 #command that returns random popular movie quote when triggered
