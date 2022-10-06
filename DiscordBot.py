@@ -97,6 +97,7 @@ async def quote(cntxt): #function name 'quote' is the primary command trigger a 
     emojis = ["🍿", "🥤", "🎥", "🎬"]
     await cntxt.send(random.choice(quotes) + " " + cntxt.message.author.mention + " " + random.choice(emojis)) #random quote will be chosen from list and returned to user as well as mention user on discord
 
+    
 #command that allows the user to create a watchlist that can be accessed at any time
 @bot.command(aliases = ["create", "Create", "Createwatchlist"], description = ": Create & save a movie watchlist!", brief = ": Create & save a movie watchlist!")
 async def createwatchlist(cntxt, *, watchlist): # name of async function is primary command trigger, watchlist parameter will be assigned the argument inputted by user which contains the watchlist
@@ -115,6 +116,7 @@ async def createwatchlist(cntxt, *, watchlist): # name of async function is prim
     else: # if the result of query isn't an empty list, this implies the existence of a watchlist for that specific user, so the bot notifies the user they can't create more than one watchlist
         await cntxt.send("Sorry, " + cntxt.message.author.mention + "," + " you can't have more than one watchlist." + " 😶")
 
+        
 #command that allows the user to view their watchlist after creation
 @bot.command(aliases = ["view", "View", "Viewwatchlist"], description = ": View your movie watchlist!", brief = ": View your movie watchlist!")
 async def viewwatchlist(cntxt):
@@ -132,6 +134,7 @@ async def viewwatchlist(cntxt):
         for movie in result:
             await cntxt.send("Your movie watchlist: " + movie[0] + " | " + cntxt.message.author.mention + " " + random.choice(emojis))
 
+            
 #command that allows the user to delete their current watchlist
 @bot.command(aliases = ["delete", "Delete", "Deletewatchlist"], description = ": Delete your movie watchlist!", brief = ": Delete your movie watchlist!")
 async def deletewatchlist(cntxt):
@@ -153,4 +156,4 @@ async def deletewatchlist(cntxt):
 
 
 
-bot.run("NzcxNzYxMDgwMzc1ODM2Njky.X5w0hA.ZHOhKpunBmxc4IUKdjmE1C9-POQ") #runs the bot - the token in the string allows the code to connect to discord
+bot.run(#insert token) #runs the bot - the token in the string allows the code to connect to discord
