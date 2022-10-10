@@ -1,7 +1,7 @@
 import sqlite3
 
 # Will connect to a database that python creates if it doesn't exist
-db = sqlite3.connect("userData.db")
+db = sqlite3.connect("bot.db")
 
 c = db.cursor()
 
